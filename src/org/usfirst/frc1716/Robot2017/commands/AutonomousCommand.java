@@ -36,10 +36,14 @@ public class AutonomousCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.driveSubsystem.resetEncoders();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	if (Robot.driveSubsystem.getEncoder(true) < (int)(Robot.driveSubsystem.TICKS_PER_ROTATION * 2)){
+    		Robot.driveSubsystem.straightDrive(0.5, 0.1);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
