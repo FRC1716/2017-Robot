@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc1716.Robot2017.commands.*;
 import org.usfirst.frc1716.Robot2017.subsystems.*;
 
@@ -54,6 +56,8 @@ public class Robot extends IterativeRobot {
         //(which it very likely will), subsystems are not guaranteed to be
         // constructed yet. Thus, their requires() statements may grab null
         // pointers. Bad news. Don't move it.
+        Robot.driveSubsystem.calibrateGyro();
+        
         oi = new OI();
 
         // instantiate the command used for the autonomous period
@@ -104,6 +108,9 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+    	
+    	SmartDashboard.putNumber("Gyro: ", Robot.driveSubsystem.getGyroAngle());
+    	
         Scheduler.getInstance().run();
     }
 
