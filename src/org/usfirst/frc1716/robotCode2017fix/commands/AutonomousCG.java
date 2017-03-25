@@ -61,20 +61,20 @@ public class AutonomousCG extends CommandGroup {
     	switch((int)SmartDashboard.getNumber("Auto Pos", 1))
     	{
     	case 0:
-    		addSequential(new ForwardsCommand(2478));
-        	addSequential(new TurnDegreesCommand(60.0));
-        	addSequential(new ForwardsCommand(1036));
+    		addSequential(new ForwardsCommand(2422));
+        	addSequential(new TurnDegreesCommand(45.0));
+        	addSequential(new ForwardsCommand(1708));
         	break;
     	case 1:
-    		addSequential(new ForwardsCommand(2384));
+    		addSequential(new ForwardsCommand(2184));
     		break;
     	case 2:
-    		addSequential(new ForwardsCommand(2478));
-        	addSequential(new TurnDegreesCommand(-60.0));
-        	addSequential(new ForwardsCommand(1036));
+    		addSequential(new ForwardsCommand(2422));
+        	addSequential(new TurnDegreesCommand(-45.0));
+        	addSequential(new ForwardsCommand(1708));
         	break;
         default:
-        	addSequential(new ForwardsCommand(2400));
+        	addSequential(new ForwardsCommand(2184));
     		break;
     	}
     }
